@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FC BACELONA</title>
+    <link rel="preload" href="./assets/fonts/Barcelona19-20.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Barcelona19-20.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="./assets/fonts/Barcelona19-20.woff" as="font" type="font/woff" crossorigin>
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <nav id='menu'>
+            <label for='responsive-menu'></label>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h1 class="main-title" style="font-family: 'Barcelona 19-20'; font-weight: normal; font-style: normal;">FC BARCELONA</h1>
+            <div class="overlay"></div>
+            <video class="background-video" autoplay muted id="backgroundVideo">
+                <source src="./assets/video/barca5.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento video.
+            </video>
+            <spam class="title-back" style="font-family: 'Barcelona 19-20'; font-weight: normal; font-style: normal;" >MÁS QUE UN CLUB</spam>
+        </section>
+        
+    <script>
+        const video = document.querySelector('.background-video');
+
+        video.addEventListener('timeupdate', () => {
+            if (video.currentTime >= 15) {
+                video.pause();
+                video.removeEventListener('timeupdate', arguments.callee);
+            }
+        });
+    </script>
+
+        <section class="about-us" id="about">
+            <h2 style="font-family: 'Barcelona 19-20'; font-weight: normal; font-style: normal;" >Sobre Nosotros</h2>
+            <p>El Fútbol Club Barcelona, conocido popularmente como Barça, fue fundado el 29 de noviembre de 1899 por un
+                grupo de futbolistas suizos, españoles y británicos liderados por Joan Gamper. Desde sus inicios, el
+                club ha representado valores como la pasión, el trabajo en equipo y la dedicación.</p>
+
+            <p>A lo largo de su historia, el Barcelona ha alcanzado numerosos éxitos tanto en competiciones nacionales
+                como internacionales, convirtiéndose en uno de los clubes más exitosos del mundo. Con una rica tradición
+                y una base de aficionados apasionados, el Barça ha dejado una huella imborrable en el fútbol y en la
+                cultura española.</p>
+
+            <p>El club también es conocido por su famosa filosofía de juego, que prioriza el fútbol de posesión y el
+                desarrollo de talentos jóvenes a través de su academia, La Masia. Esta filosofía ha producido a algunos
+                de los mejores jugadores de la historia, como Lionel Messi, Andrés Iniesta y Xavi Hernández.</p>
+
+            <p>Además de su éxito en el campo, el FC Barcelona se ha comprometido a ser una fuerza positiva en la
+                sociedad, promoviendo valores de inclusión y diversidad. Con el lema "Més que un club" (Más que un
+                club), el Barça se considera un símbolo de identidad catalana y un referente en el ámbito deportivo y
+                social.</p>
+        </section>
+        <section class="gallery" id="gallery">
+            <h2 style="font-family: 'Barcelona 19-20'; font-weight: normal; font-style: normal;" >Galería</h2>
+            <ul class="gallery-grid">
+                <li><img src="./assets/img/fundacion.jpg" alt="img1"></li>
+                <li><img src="./assets/img/sextete.jpg" alt="img2"></li>
+                <li><img src="./assets/img/barcaF.jpg" alt="img3"></li>
+                <li><img src="./assets/img/barcam.webp" alt="img4"></li>
+                <li><img src="./assets/img/vini.jpg" alt="img5"></li>
+                <li><video src="./assets/video/himno.mp4" controls></video></li>
+            </ul>
+        </section>
+
+
+        <section class="contact" id="contact">
+            <h2>Contacto</h2>
+            <form class="contact-form">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2024 Proyecto Phoenix. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
